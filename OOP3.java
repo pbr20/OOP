@@ -44,17 +44,17 @@ class Square extends shape {
 }
 
 //////////////////// Multi-level////////////////
-// ___
-// |___|
-// |
-// |
-// ___
-// |___|
-// |
-// |
-// ___
-// |___|
-//
+// ___ //
+// |___| //
+// | //
+// | //
+// ___ //
+// |___| //
+// | //
+// | //
+// ___ //
+// |___| //
+// //
 ////////////////////////////////////////////////
 
 class Rectangle extends Square { // shape->Square->Rectangle
@@ -105,6 +105,24 @@ class Triangle extends shape { // shape->Square && shape->Triangle
     System.out.println("Area: " + this.height * this.base * 0.5f);
   }
 }
+
+////////////////// Hierarchical//////////////////
+// ___ //
+// |___| //
+// | //
+// ___|____ //
+// | | //
+// | | //
+// ___ ____ //
+// |___| |___| //
+// | //
+// | //
+// ___ //
+// |___| //
+// //
+////////////////////////////////////////////////
+
+// shape -> Triangle && shape -> Square -> Rectangle
 
 public class OOP3 {
   public static void main(String args[]) {
