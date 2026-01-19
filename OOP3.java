@@ -44,17 +44,17 @@ class Square extends shape {
 }
 
 //////////////////// Multi-level////////////////
-// ___
-// |___|
-// |
-// |
-// ___
-// |___|
-// |
-// |
-// ___
-// |___|
-//
+//             ___                            //
+//            |___|                           //
+//              |                             //
+//              |                             //
+//             ___                            //
+//            |___|                           //
+//              |                             //
+//              |                             //
+//             ___                            //
+//            |___|                           //
+//                                            //
 ////////////////////////////////////////////////
 
 class Rectangle extends Square { // shape->Square->Rectangle
@@ -75,36 +75,51 @@ class Rectangle extends Square { // shape->Square->Rectangle
   }
 }
 
-////////////////// Hierarchical//////////////////
-// ___ //
-// |___| //
-// | //
-// ___|____ //
-// | | //
-// | | //
-// ___ ____ //
-// |___| |___| //
-// //
+//////////////////Hierarchical//////////////////
+//                 ___                        //
+//                |___|                       //
+//                  |                         //
+//               ___|____                     //
+//              |       |                     //
+//              |       |                     //
+//             ___     ____                   //
+//            |___|    |___|                  //
+//                                            //
 ////////////////////////////////////////////////
 
-class Triangle extends shape { // shape->Square && shape->Triangle
-  int height; // Hierarchical
+class Triangle extends shape{  //shape->Square  && shape->Triangle
+  int height;                  //Hierarchical
   int base;
 
-  Triangle() {
-  }
-
-  Triangle(String color, int height, int base) {
+  Triangle(){}
+  Triangle(String color, int height, int base){
     this.color = color;
     this.height = height;
     this.base = base;
   }
-
-  public void display() {
-    System.out.println("Color: " + this.color);
-    System.out.println("Area: " + this.height * this.base * 0.5f);
+  public void display(){
+    System.out.println("Color: "+this.color);
+    System.out.println("Area: "+this.height*this.base*0.5f);
   }
 }
+
+//////////////////Hierarchical//////////////////
+//                 ___                        //
+//                |___|                       //
+//                  |                         //
+//               ___|____                     //
+//              |       |                     //
+//              |       |                     //
+//             ___     ____                   //
+//            |___|    |___|                  //
+//              |                             //
+//              |                             //
+//             ___                            //
+//            |___|                           //
+//                                            //
+//////////////////////////////////////////////// 
+
+//shape -> Triangle && shape -> Square -> Rectangle
 
 public class OOP3 {
   public static void main(String args[]) {
@@ -123,9 +138,9 @@ public class OOP3 {
     Rectangle r1 = new Rectangle("Yellow", 2, 3);
     r1.display();
 
-    /////////////////// Triangle/////////////////////////
+    ///////////////////Triangle/////////////////////////
     System.out.println("////////////Triangle/////////");
-    Triangle t1 = new Triangle("Pink", 6, 7);
+    Triangle t1 = new Triangle("Pink" , 6 ,7);
     t1.display();
   }
 }
