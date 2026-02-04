@@ -103,7 +103,7 @@ class Triangle extends shape{  //shape->Square  && shape->Triangle
   }
 }
 
-//////////////////Hierarchical//////////////////
+//////////////////Multiple//////////////////////
 //                 ___                        //
 //                |___|                       //
 //                  |                         //

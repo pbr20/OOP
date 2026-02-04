@@ -29,6 +29,14 @@ protected is accessible from:
  xxx diff package sub class xxx
 */
 
+//private – “This stays in my room”
+/*
+Not accessible from:
+ xxx other classes
+ xxx same package
+ xxx subclasses
+ xxx other packages
+*/
 import Access_Modifier.package2.public_acc;
 
 class student {
