@@ -37,7 +37,6 @@ Not accessible from:
  xxx subclasses
  xxx other packages
 */
-import Access_Modifier.package2.public_acc;
 
 class student {
 

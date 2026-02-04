@@ -17,7 +17,7 @@ class game {
   }
 
   public void set_team_kill_count(int team_kill_count) {
-    this.team_kill_count = team_kill_count;
+    game.team_kill_count = team_kill_count;
   }
 
   public void set_kill_count(int kill_count) {
@@ -72,7 +72,7 @@ public class OOP7 {
 
     player1.kill_count = 5;
     player2.kill_count = 8;
-    player1.team_kill_count += player1.kill_count + player2.kill_count;
+    game.team_kill_count += player1.kill_count + player2.kill_count;
 
     System.out.println(player1.game_name);
     System.out.println(player1);
