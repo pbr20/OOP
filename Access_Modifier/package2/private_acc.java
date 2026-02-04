@@ -16,11 +16,11 @@ public class private_acc {
 
   }
 
-  void display() {
+  public void display() {
     System.out.println("PASSWORD: " + this.pass);
   }
 
-  void set_pass(String pass) {
+  public void set_pass(String pass) {
     this.pass = pass;
   }
 

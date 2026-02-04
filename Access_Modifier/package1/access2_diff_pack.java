@@ -36,7 +36,7 @@ public class access2_diff_pack {
     // pro2.display();
 
     // default_acc def1 = new default_acc("Rithen Barua"); // example of default acc
-    // specifer not accessable in same package
+    // specifer not accessable in diff package
     // def1.display();
     pro_acc pro3 = new pro_acc();
     pro3.show();
