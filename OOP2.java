@@ -52,6 +52,27 @@ class TA extends Student1 {
   }
 }
 
+/////////////// calculator with overloading/////////////////
+
+class calculator {
+
+  calculator() {
+
+  }
+
+  public double add(double a, double b) {
+    return a + b;
+  }
+
+  public double add(double... numbers) { // overloading where u can add any ammount of number here
+    double sum = 0;
+    for (double num : numbers)
+      sum += num;
+    return sum;
+  }
+
+}
+
 public class OOP2 {
   public static void main(String args[]) {
     Student1 s1 = new Student1();
@@ -65,5 +86,9 @@ public class OOP2 {
     Student1 TA1 = new TA("Puspak", 1002, "Prof. XYZ");
     TA1.display(TA1.name); // will OVERRIDE
     TA1.display(TA1.name, TA1.id); // Method overriding will happen during run time by JVM -> JAVA VIRTUAL MACHINE
+
+    calculator c1 = new calculator();
+    System.out.println(c1.add(2.3, 4, 3, 5, 67, 2, 4, 6, 3, 2, 3, 3.5));
+    System.out.println(c1.add(3.5, 5.6));
   }
 }

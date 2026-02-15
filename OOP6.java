@@ -4,7 +4,7 @@
 
 ////////////*****************points********************////////////////
 //  1-> Can have abstract or non abstratc method
-//  2-> can not be inisiated means u cant create an object from an abstract class
+//  2-> can not be inisiated means u cant create an abstract obj from abstract class however with abstract class u can create non-abstract obj
 //  3-> can have constructor and static method
 //  4-> can have final method which will force the subclass to not change the body of that method
 ///////////////////////////////////////////////////////////////////////
@@ -45,7 +45,7 @@ class chicken extends animal {
 
 public class OOP6 {
   public static void main(String args[]) {
-    horse h1 = new horse();
+    animal h1 = new horse(); // child obj created by abstract class
     h1.walk();
     chicken c1 = new chicken();
     c1.walk();
