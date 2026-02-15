@@ -1,6 +1,8 @@
 ///////////////////////////Inheitance//////////////////////
 ///////////////////////////4 tyes//////////////////////////
 
+////Relation of Inheritance -> IS a  ->(child) appel is a (parent) fruit
+
 ///////////////////////Single level////////////////////////
 ///////////////////////////////////
 //             ___               //
@@ -33,7 +35,12 @@ class Square extends shape {
   }
 
   Square(String color, int side) {
-    this.color = color;
+    super(color); // super keyword calls parents class
+                  // super keyword can call parents class
+                  // -> attributes super.attributes
+                  // -> methods super.method();
+                  // -> constructor super(parameters);
+                  // here we called the parents class constructor using super keyword
     this.side = side;
   }
 
@@ -44,17 +51,17 @@ class Square extends shape {
 }
 
 //////////////////// Multi-level////////////////
-//             ___                            //
-//            |___|                           //
-//              |                             //
-//              |                             //
-//             ___                            //
-//            |___|                           //
-//              |                             //
-//              |                             //
-//             ___                            //
-//            |___|                           //
-//                                            //
+// ___ //
+// |___| //
+// | //
+// | //
+// ___ //
+// |___| //
+// | //
+// | //
+// ___ //
+// |___| //
+// //
 ////////////////////////////////////////////////
 
 class Rectangle extends Square { // shape->Square->Rectangle
@@ -75,51 +82,54 @@ class Rectangle extends Square { // shape->Square->Rectangle
   }
 }
 
-//////////////////Hierarchical//////////////////
-//                 ___                        //
-//                |___|                       //
-//                  |                         //
-//               ___|____                     //
-//              |       |                     //
-//              |       |                     //
-//             ___     ____                   //
-//            |___|    |___|                  //
-//                                            //
+////////////////// Hierarchical//////////////////
+// ___ //
+// |___| //
+// | //
+// ___|____ //
+// | | //
+// | | //
+// ___ ____ //
+// |___| |___| //
+// //
 ////////////////////////////////////////////////
 
-class Triangle extends shape{  //shape->Square  && shape->Triangle
-  int height;                  //Hierarchical
+class Triangle extends shape { // shape->Square && shape->Triangle
+  int height; // Hierarchical
   int base;
 
-  Triangle(){}
-  Triangle(String color, int height, int base){
+  Triangle() {
+  }
+
+  Triangle(String color, int height, int base) {
     this.color = color;
     this.height = height;
     this.base = base;
   }
-  public void display(){
-    System.out.println("Color: "+this.color);
-    System.out.println("Area: "+this.height*this.base*0.5f);
+
+  public void display() {
+    System.out.println("Color: " + this.color);
+    System.out.println("Area: " + this.height * this.base * 0.5f);
   }
 }
 
-//////////////////Multiple//////////////////////
-//                 ___                        //
-//                |___|                       //
-//                  |                         //
-//               ___|____                     //
-//              |       |                     //
-//              |       |                     //
-//             ___     ____                   //
-//            |___|    |___|                  //
-//              |                             //
-//              |                             //
-//             ___                            //
-//            |___|                           //
-//                                            //
-//////////////////////////////////////////////// 
+////////////////// Multiple//////////////////////
+// ___ //
+// |___| //
+// | //
+// ___|____ //
+// | | //
+// | | //
+// ___ ____ //
+// |___| |___| //
+// | //
+// | //
+// ___ //
+// |___| //
+// //
+////////////////////////////////////////////////
 
-//shape -> Triangle && shape -> Square -> Rectangle
+// shape -> Triangle && shape -> Square -> Rectangle
 
 public class OOP3 {
   public static void main(String args[]) {
@@ -130,7 +140,12 @@ public class OOP3 {
 
     /////////////////// SQUARE////////////////////////
     System.out.println("////////////Square//////////");
-    Square sq1 = new Square("black", 2);
+    // Square sq1 = new Square("black", 2); // ->> This is right we create object by
+    // child class
+    shape sq1 = new Square("black", 2); // This is also right since child is a parent
+    // Triangle sq1 = new Square("black", 2); //But this is wrong since both
+    // triangle and Square are inherited from shape /////Siblings X////
+    // //Parents-Child O///
     sq1.display();
 
     //////////////////// RECTANGLE/////////////////////
@@ -138,9 +153,9 @@ public class OOP3 {
     Rectangle r1 = new Rectangle("Yellow", 2, 3);
     r1.display();
 
-    ///////////////////Triangle/////////////////////////
+    /////////////////// Triangle/////////////////////////
     System.out.println("////////////Triangle/////////");
-    Triangle t1 = new Triangle("Pink" , 6 ,7);
+    Triangle t1 = new Triangle("Pink", 6, 7);
     t1.display();
   }
 }

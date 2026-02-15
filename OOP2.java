@@ -1,23 +1,54 @@
 //////////////////////Polymorphissm////////////////////////
-/////////////////////Compile time///////////////////////////
+/////////////////////Compile time//////////////////////////
 class Student1 {
   String name;
   int id;
 
+  ///////////// OVerloading///////////////
+
   Student1() {
 
+  }
+
+  Student1(String name, int id) { // constructor overloading
+    this.name = name;
+    this.id = id;
   }
 
   public void display(String name) {
     System.out.println(name);
   }
 
-  public void display(int id) {
+  public void display(int id) { // method overloading
     System.out.println(id);
   }
 
   public void display(String name, int id) {
+    System.out.println(" ---Student--- ");
     System.out.println(name + " " + id);
+  }
+}
+
+///////////////// Run time//////////////
+/////////// Overriding//////////////////
+
+class TA extends Student1 {
+  String TA_OF;
+
+  TA(String name, int id, String TA_OF) {
+    super(name, id);
+    this.TA_OF = TA_OF;
+  }
+
+  @Override
+  public void display(String name, int id) {
+    System.out.println(" ---Teacher Assitant--- "); // overide the parent class method in child class
+    System.out.println(name + " " + id);
+  }
+
+  @Override
+  public void display(String name) {
+
   }
 }
 
@@ -30,5 +61,9 @@ public class OOP2 {
     s1.display(s1.name);
     s1.display(s1.id);
     s1.display(s1.name, s1.id);
+
+    Student1 TA1 = new TA("Puspak", 1002, "Prof. XYZ");
+    TA1.display(TA1.name); // will OVERRIDE
+    TA1.display(TA1.name, TA1.id); // Method overriding will happen during run time by JVM -> JAVA VIRTUAL MACHINE
   }
 }
